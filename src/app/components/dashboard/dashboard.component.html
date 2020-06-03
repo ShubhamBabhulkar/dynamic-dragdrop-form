@@ -1,0 +1,37 @@
+<!-- <div class="example-boundary">
+    <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+      I can only be dragged within the dotted container
+    </div>
+  </div> -->
+
+  <div class="row">
+
+    <div class='col-md-4'>
+      <ul class="list-group">
+        <li class="list-group-item" (click)="openBottomSheet('input'); ">Text Input</li>
+        <li class="list-group-item" (click)="openBottomSheet('text')">Text</li>
+        <li class="list-group-item" (click)="openBottomSheet('button')">Button</li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let comp of component; let i = index;" cdkDrag>
+          <span *ngIf="comp.type=='input'">
+            <input type="text" name="{{comp.name}}" id="{{comp.name}}" placeholder="{{comp.placeholder}}" class="{{comp.className}}"/> 
+          </span>
+          <span *ngIf="comp.type=='text'">
+          <h4>{{comp.label}}</h4>
+          </span>
+          <span *ngIf="comp.type=='button'">
+            <input type="button" value="{{comp.btntitle}}" class="{{comp.btnclass}}" /> 
+          </span>
+          <span><a href="javascript:void(0)" (click)="removeitem(i)">X</a></span>
+        </div>
+        
+      </div>
+      <div style="margin: 10px 0;">
+        <input type="button" value="Submit Form" class="btn btn-primary" (click)="submitform()" />
+        <input type="button" value="Reset Form" class="btn btn-primary" style="margin: 0 10px;" (click)="resetform()" />
+      </div>
+    </div>
+  </div>

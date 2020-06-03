@@ -1,0 +1,63 @@
+<!-- <mat-list role="list">
+    <mat-list-item role="listitem"> Input Field name : <input type='text' name="name" [(ngModel)]='name' /></mat-list-item>
+    <mat-list-item role="listitem">Placeholder : <input type='text' name="placeholder" [(ngModel)]='placeholder' /></mat-list-item>
+    <mat-list-item role="listitem">Class : <input type='text' name="className" [(ngModel)]='className' /></mat-list-item>
+  </mat-list> -->
+<h1>{{type | titlecase}} Component</h1>
+<table class="table" *ngIf="type=='input'">
+    <tr>
+        <td>Input Field name </td>
+        <td>:</td>
+        <td><input type='text' name="name" [(ngModel)]='name' class="form-control" /></td>
+    </tr>
+    <tr>
+        <td>Placeholder </td>
+        <td>:</td>
+        <td><input type='text' name="placeholder" [(ngModel)]='placeholder' class="form-control" /></td>
+    </tr>
+    <tr>
+        <td>Class </td>
+        <td>:</td>
+        <td><input type='text' name="className" [(ngModel)]='className' class="form-control" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><input type='submit' name="button" class="btn-primary btn" value="Add Component" (click)="addField()" />
+        </td>
+    </tr>
+</table>
+
+<table class="table" *ngIf="type=='text'">
+    <tr>
+        <td>Text (Label) </td>
+        <td>:</td>
+        <td><input type='text' name="label" [(ngModel)]='label' class="form-control" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><input type='submit' name="button" class="btn-primary btn" value="Add Component" (click)="addField()" />
+        </td>
+    </tr>
+</table>
+
+
+<table class="table" *ngIf="type=='button'">
+    <tr>
+        <td>Button Title </td>
+        <td>:</td>
+        <td><input type='text' name="btntitle" [(ngModel)]='btntitle' class="form-control" /></td>
+    </tr>
+    <tr>
+        <td>Class</td>
+        <td>:</td>
+        <td><input type='text' name="btnclass" [(ngModel)]='btnclass' class="form-control" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><input type='submit' name="button" class="btn-primary btn" value="Add Component" (click)="addField()" />
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,22 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+    <table class="table customtable" >
+        <tr *ngFor="let comp of components">
+            <td *ngIf="comp.type=='input'">
+                <input type="text" name="{{comp.name}}" id="{{comp.name}}" formControlName="{{comp.name}}"
+                    class="{{comp.className}}" placeholder="{{comp.placeholder}}" />
+            </td>
+            <td *ngIf="comp.type=='text'">
+                {{comp.label}}
+            </td>
+
+            <td *ngIf="comp.type=='button'">
+                <input type="submit" name="{{comp.btntitle}}" id="{{comp.btntitle}}" 
+                    class="{{comp.btnclass}}" value="{{comp.btntitle}}"  />
+            </td>
+
+        </tr>
+    </table>
+
+</form>
